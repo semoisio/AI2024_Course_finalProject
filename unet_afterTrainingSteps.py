@@ -167,7 +167,7 @@ model = UNet(in_channels=3, out_channels=1).to(device)
 model.load_state_dict(torch.load(r'.\unet_liver_segmentation.pth'))
 
 # Define function for IoU
-def iou(pred, target, n_classes=2):
+def iou(pred, target, n_classes=1):
     ious = []
     pred = torch.argmax(pred, dim=1).view(-1)
     target = target.view(-1)
