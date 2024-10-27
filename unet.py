@@ -237,7 +237,7 @@ torch.save(model.state_dict(), "unet_liver_segmentation.pth")
 
 
 # Define function for Intersection over Union (IoU) 
-def iou(pred, target, n_classes=2):
+def iou(pred, target, n_classes=1):
     ious = []
     pred = torch.argmax(pred, dim=1).view(-1)
     target = target.view(-1)
